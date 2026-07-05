@@ -1,167 +1,171 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact - SET Smart Engineering Technologies</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Barlow:wght@400;500;600;700&family=Barlow+Condensed:wght@500;600;700&display=swap" rel="stylesheet">
+    <title>Контакты SET - Smart Engineering Technologies</title>
     <link rel="stylesheet" href="style.css">
-    <style>
-        .page-hero { background: #0A1628; padding: 160px 0 80px; text-align: center; }
-        .page-hero h1 { font-family: 'Barlow', sans-serif; font-weight: 700; font-size: clamp(2.5rem,5vw,4rem); color: #fff; letter-spacing: -0.02em; }
-        .page-hero p { color: #A0B8D8; font-size: 18px; max-width: 600px; margin: 16px auto 0; font-weight: 300; }
-        .contact-grid { display: grid; grid-template-columns: 1fr 1.3fr; gap: 64px; align-items: start; }
-        @media (max-width: 900px) { .contact-grid { grid-template-columns: 1fr; } }
-        .contact-info-list { display: flex; flex-direction: column; gap: 24px; margin-top: 32px; }
-        .contact-info-item { display: flex; align-items: flex-start; gap: 16px; }
-        .contact-icon { width: 40px; height: 40px; background: #fff; border: 1px solid #E2E8F0; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-        .contact-label { font-family: 'Barlow Condensed', sans-serif; font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: #5A7090; font-weight: 600; }
-        .contact-value { color: #0A1628; font-weight: 500; font-size: 14px; margin-top: 4px; }
-        .contact-form-wrap { background: #fff; border: 1px solid #E2E8F0; padding: 40px; }
-        .form-title { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: #5A7090; margin-bottom: 24px; padding-bottom: 16px; border-bottom: 1px solid #E2E8F0; }
-        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
-        @media (max-width: 600px) { .form-row { grid-template-columns: 1fr; } }
-        .form-group { margin-bottom: 16px; }
-        .form-label { font-family: 'Barlow Condensed', sans-serif; font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: #5A7090; font-weight: 600; display: block; margin-bottom: 8px; }
-        .form-label .required { color: #D4AF37; margin-left: 4px; }
-        .form-input, .form-textarea { width: 100%; background: #F8FAFC; border: 1px solid #E2E8F0; padding: 12px 16px; font-size: 14px; color: #0A1628; font-family: 'Inter', sans-serif; transition: border-color 0.2s; outline: none; }
-        .form-input:focus, .form-textarea:focus { border-color: #00A9E0; }
-        .form-input::placeholder, .form-textarea::placeholder { color: #AABBCC; }
-        .form-textarea { resize: none; min-height: 120px; }
-        .form-submit { width: 100%; padding: 16px; background: #00A9E0; color: #fff; border: none; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; cursor: pointer; transition: background 0.2s; }
-        .form-submit:hover { background: #00BFFF; }
-        .form-note { text-align: center; font-size: 11px; color: #5A7090; margin-top: 16px; }
-        .doc-list { display: flex; flex-direction: column; gap: 12px; margin-bottom: 48px; }
-        .doc-item { display: flex; align-items: center; gap: 24px; padding: 24px; border: 1px solid #E2E8F0; background: #fff; transition: all 0.3s; cursor: pointer; }
-        .doc-item:hover { border-color: rgba(0,169,224,0.4); box-shadow: 0 2px 16px rgba(0,169,224,0.07); }
-        .doc-item.highlight { background: #0A1628; border-color: #0A1628; }
-        .doc-item.highlight:hover { background: #0D1F3C; }
-        .doc-icon { width: 48px; height: 56px; border: 1px solid #E2E8F0; display: flex; flex-direction: column; align-items: center; justify-content: flex-end; padding-bottom: 6px; flex-shrink: 0; }
-        .doc-item.highlight .doc-icon { border-color: rgba(212,175,55,0.4); }
-        .doc-type { font-family: 'Barlow Condensed', sans-serif; font-size: 9px; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 700; color: #00A9E0; }
-        .doc-item.highlight .doc-type { color: #D4AF37; }
-        .doc-info { flex: 1; }
-        .doc-title { font-family: 'Barlow', sans-serif; font-weight: 700; font-size: 16px; color: #0A1628; margin-bottom: 4px; }
-        .doc-item.highlight .doc-title { color: #fff; }
-        .doc-desc { font-size: 14px; color: #5A7090; line-height: 1.5; }
-        .doc-item.highlight .doc-desc { color: #7A9CC0; }
-        .doc-meta { text-align: right; flex-shrink: 0; }
-        .doc-pages { font-size: 11px; color: #5A7090; }
-        .doc-item.highlight .doc-pages { color: #A0B8D8; }
-        .doc-code { font-family: 'Barlow Condensed', sans-serif; font-size: 9px; letter-spacing: 0.1em; text-transform: uppercase; color: #AABBCC; }
-        .doc-item.highlight .doc-code { color: #6888A8; }
-        .doc-download { width: 40px; height: 40px; border: 1px solid #E2E8F0; display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: all 0.3s; }
-        .doc-item:hover .doc-download { border-color: #00A9E0; background: #00A9E0; }
-        .doc-item.highlight .doc-download { border-color: rgba(212,175,55,0.4); }
-        .doc-item.highlight:hover .doc-download { background: #D4AF37; border-color: #D4AF37; }
-        .doc-download svg { width: 14px; height: 14px; color: #5A7090; transition: color 0.3s; }
-        .doc-item:hover .doc-download svg { color: #fff; }
-        .doc-item.highlight .doc-download svg { color: #D4AF37; }
-        .doc-item.highlight:hover .doc-download svg { color: #0A1628; }
-        .news-grid { display: grid; grid-template-columns: 1.3fr 1fr; gap: 20px; margin-bottom: 64px; }
-        @media (max-width: 900px) { .news-grid { grid-template-columns: 1fr; } }
-        .news-featured { border: 1px solid #E2E8F0; overflow: hidden; transition: all 0.3s; }
-        .news-featured:hover { border-color: rgba(0,169,224,0.3); box-shadow: 0 4px 32px rgba(0,169,224,0.09); }
-        .news-featured-img { height: 256px; background: #E2E8F0; position: relative; overflow: hidden; }
-        .news-featured-img img { width: 100%; height: 100%; object-fit: cover; opacity: 0.8; transition: transform 0.7s; }
-        .news-featured:hover .news-featured-img img { transform: scale(1.05); }
-        .news-cat { position: absolute; top: 20px; left: 20px; font-family: 'Barlow Condensed', sans-serif; font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 700; padding: 6px 12px; color: #fff; }
-        .news-featured-body { padding: 28px; }
-        .news-date { font-size: 11px; color: #5A7090; margin-bottom: 12px; }
-        .news-title { font-family: 'Barlow', sans-serif; font-weight: 700; font-size: 20px; color: #0A1628; margin-bottom: 12px; line-height: 1.3; }
-        .news-featured:hover .news-title { color: #00A9E0; }
-        .news-excerpt { font-size: 14px; color: #5A7090; line-height: 1.6; }
-        .news-side { display: flex; flex-direction: column; gap: 16px; }
-        .news-small { display: flex; gap: 16px; border: 1px solid #E2E8F0; padding: 16px; transition: all 0.3s; }
-        .news-small:hover { border-color: rgba(0,169,224,0.3); box-shadow: 0 2px 16px rgba(0,169,224,0.07); }
-        .news-small-img { width: 96px; height: 80px; background: #E2E8F0; overflow: hidden; flex-shrink: 0; }
-        .news-small-img img { width: 100%; height: 100%; object-fit: cover; opacity: 0.8; transition: transform 0.5s; }
-        .news-small:hover .news-small-img img { transform: scale(1.05); }
-        .news-small-cat { display: inline-block; font-family: 'Barlow Condensed', sans-serif; font-size: 9px; letter-spacing: 0.15em; text-transform: uppercase; font-weight: 700; padding: 2px 8px; color: #fff; margin-bottom: 8px; }
-        .news-small-title { font-family: 'Barlow', sans-serif; font-weight: 700; font-size: 14px; color: #0A1628; line-height: 1.3; margin-bottom: 4px; }
-        .news-small:hover .news-small-title { color: #00A9E0; }
-        .news-small-date { font-size: 10px; color: #5A7090; }
-    </style>
 </head>
 <body>
-    <nav class="navbar" id="navbar">
-        <div class="nav-container">
-            <a href="index.html" class="nav-logo"><img src="logo.png" alt="SET" class="logo-img"><div class="logo-text"><span class="logo-name">SET</span><span class="logo-sub">Smart Engineering Technologies</span></div></a>
-            <ul class="nav-links" id="navLinks"><li><a href="index.html">Home</a></li><li><a href="services.html">Services</a></li><li><a href="industries.html">Industries</a></li><li><a href="academy.html">Academy</a></li><li><a href="partners.html">Partners</a></li><li><a href="contact.html" class="active">Contact</a></li></ul>
-            <a href="contact.html" class="nav-cta">Contact Us</a>
-            <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <img src="logo.png" alt="SET Logo" class="logo-img">
+                <div class="logo-text">
+                    <div class="logo-name">SET</div>
+                    <div class="logo-subtitle">Smart Engineering Technologies</div>
+                </div>
+            </a>
+            <button class="mobile-menu-btn" onclick="toggleMenu()">☰</button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="manifesto.html">Манифест</a></li>
+                <li><a href="philosophy.html">Философия</a></li>
+                <li><a href="about.html">О компании</a></li>
+                <li><a href="mission.html">Миссия</a></li>
+                <li><a href="why-set.html">Почему SET</a></li>
+                <li><a href="vision-2035.html">Видение 2035</a></li>
+                <li><a href="values.html">Ценности</a></li>
+                <li><a href="services.html">Услуги</a></li>
+                <li><a href="contact.html" class="active">Контакты</a></li>
+            </ul>
         </div>
     </nav>
 
-    <div class="page-hero">
+    <section class="page-hero">
         <div class="container">
-            <div class="section-tag" style="justify-content:center;margin-bottom:24px;"><div class="tag-line"></div><span>Contact</span><div class="tag-line"></div></div>
-            <h1>Let's Work Together</h1>
-            <p>Tell us about your project — we'll respond within one business day.</p>
-        </div>
-    </div>
-
-    <section class="section" style="background:#F8FAFC;">
-        <div class="container">
-            <div class="contact-grid">
-                <div class="fade-in">
-                    <div class="section-tag"><div class="tag-line"></div><span>Contact</span></div>
-                    <h2 class="section-title">Let's Work Together</h2>
-                    <p class="section-desc">Tell us about your project or task — we'll respond within one business day and suggest the optimal cooperation format.</p>
-                    <div class="contact-info-list">
-                        <div class="contact-info-item"><div class="contact-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M2 4h16v12H2V4zm0 0l8 7 8-7" stroke="#00A9E0" stroke-width="1.2" stroke-linecap="round"/></svg></div><div><div class="contact-label">Email</div><div class="contact-value">info@setpower.az</div></div></div>
-                        <div class="contact-info-item"><div class="contact-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M3 3h4l2 4-2.5 1.5a9 9 0 004 4L12 10l4 2v4a2 2 0 01-2 2C7 18 2 13 2 7a2 2 0 012-4z" stroke="#00A9E0" stroke-width="1.2" stroke-linecap="round"/></svg></div><div><div class="contact-label">Phone</div><div class="contact-value">+994 50 247 50 57</div></div></div>
-                        <div class="contact-info-item"><div class="contact-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 2a6 6 0 016 6c0 4-6 10-6 10S4 12 4 8a6 6 0 016-6z" stroke="#00A9E0" stroke-width="1.2"/><circle cx="10" cy="8" r="2" stroke="#00A9E0" stroke-width="1.2"/></svg></div><div><div class="contact-label">Address</div><div class="contact-value">Baku, Azerbaijan</div></div></div>
-                        <div class="contact-info-item"><div class="contact-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 2a8 8 0 018 8c0 4.4-3.6 8-8 8a7.9 7.9 0 01-4-1.1L2 18l1.1-4A8 8 0 0110 2zm-2 9.5c1.5 2 3 3 5 3.5.5 0 .7-.2.8-.5l.3-1c-.5-.3-1-.5-1.5-.7l-.7.5a7 7 0 01-2-2l.5-.7c-.2-.5-.4-1-.7-1.5l-1 .3c-.3.1-.5.3-.5.8.5 1 1 2 1.8 3.3z" stroke="#00A9E0" stroke-width="1.2"/></svg></div><div><div class="contact-label">WhatsApp</div><div class="contact-value">+994 50 247 50 57</div></div></div>
-                    </div>
-                </div>
-                <div class="contact-form-wrap fade-in">
-                    <div class="form-title">Contact Form</div>
-                    <form onsubmit="event.preventDefault(); alert('Thank you! We will contact you within one business day.');">
-                        <div class="form-row">
-                            <div><label class="form-label">Name <span class="required">*</span></label><input type="text" class="form-input" placeholder="Your name" required></div>
-                            <div><label class="form-label">Company</label><input type="text" class="form-input" placeholder="Company name"></div>
-                        </div>
-                        <div class="form-row">
-                            <div><label class="form-label">Email <span class="required">*</span></label><input type="email" class="form-input" placeholder="your@email.com" required></div>
-                            <div><label class="form-label">Phone</label><input type="tel" class="form-input" placeholder="+994 ..."></div>
-                        </div>
-                        <div class="form-group"><label class="form-label">Message</label><textarea class="form-textarea" rows="4" placeholder="Describe your task or question..."></textarea></div>
-                        <button type="submit" class="form-submit">Send Request</button>
-                        <p class="form-note">We'll respond within one business day</p>
-                    </form>
-                </div>
-            </div>
+            <h1>Контакты</h1>
+            <p class="hero-subtitle">Свяжитесь с нами для обсуждения вашего проекта</p>
         </div>
     </section>
 
-    <section class="section">
+    <section class="section content-section">
         <div class="container">
-            <div class="section-header center"><div class="section-tag"><div class="tag-line"></div><span>Documents</span><div class="tag-line"></div></div><h2 class="section-title">Materials & Presentations</h2></div>
-            <div class="doc-list">
-                <div class="doc-item highlight"><div class="doc-icon"><div class="doc-type">PDF</div></div><div class="doc-info"><h3 class="doc-title">Corporate Presentation SET</h3><p class="doc-desc">Full company presentation: mission, directions, team, projects and vision to 2035.</p></div><div class="doc-meta"><div class="doc-pages">28 pages</div><div class="doc-code">DOC-01</div></div><div class="doc-download"><svg viewBox="0 0 14 14" fill="none"><path d="M7 1v8M4 6l3 3 3-3M1 13h12" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg></div></div>
-                <div class="doc-item"><div class="doc-icon"><div class="doc-type">PDF</div></div><div class="doc-info"><h3 class="doc-title">Commercial Offer</h3><p class="doc-desc">Standard commercial offer for Smart Grids and Smart Wells directions.</p></div><div class="doc-meta"><div class="doc-pages">12 pages</div><div class="doc-code">DOC-02</div></div><div class="doc-download"><svg viewBox="0 0 14 14" fill="none"><path d="M7 1v8M4 6l3 3 3-3M1 13h12" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg></div></div>
-                <div class="doc-item"><div class="doc-icon"><div class="doc-type">PDF</div></div><div class="doc-info"><h3 class="doc-title">Partner Letter</h3><p class="doc-desc">Official letter describing cooperation formats and contacts.</p></div><div class="doc-meta"><div class="doc-pages">4 pages</div><div class="doc-code">DOC-03</div></div><div class="doc-download"><svg viewBox="0 0 14 14" fill="none"><path d="M7 1v8M4 6l3 3 3-3M1 13h12" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg></div></div>
-                <div class="doc-item"><div class="doc-icon"><div class="doc-type">PDF</div></div><div class="doc-info"><h3 class="doc-title">Roadmap 2025–2030</h3><p class="doc-desc">Strategic roadmap of key company projects for 5-year horizon.</p></div><div class="doc-meta"><div class="doc-pages">8 pages</div><div class="doc-code">DOC-04</div></div><div class="doc-download"><svg viewBox="0 0 14 14" fill="none"><path d="M7 1v8M4 6l3 3 3-3M1 13h12" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg></div></div>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h2>Свяжитесь с нами</h2>
+                    <p>Мы готовы обсудить ваш проект и предложить оптимальное инженерное решение.</p>
+                    
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon">📧</div>
+                            <div>
+                                <h4>Email</h4>
+                                <a href="mailto:info@setpower.az">info@setpower.az</a>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon">📞</div>
+                            <div>
+                                <h4>Телефон</h4>
+                                <a href="tel:+994502475057">+994 50 247 50 57</a>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon">📍</div>
+                            <div>
+                                <h4>Адрес</h4>
+                                <p>Баку, Азербайджан</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon">🌐</div>
+                            <div>
+                                <h4>Сайт</h4>
+                                <a href="https://setpower.az" target="_blank">setpower.az</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contact-message">
+                        <p>Мы отвечаем в течение одного рабочего дня.</p>
+                        <p>Для срочных вопросов звоните по телефону.</p>
+                    </div>
+                </div>
+
+                <div class="contact-form-wrapper">
+                    <h2>Форма обратной связи</h2>
+                    <form class="contact-form" onsubmit="handleSubmit(event)">
+                        <div class="form-group">
+                            <label for="name">Имя *</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="company">Компания</label>
+                            <input type="text" id="company" name="company">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Телефон</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Сообщение *</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">Отправить сообщение</button>
+                    </form>
+                </div>
             </div>
 
-            <div class="section-header center" style="margin-top:64px;"><div class="section-tag"><div class="tag-line"></div><span>News & Blog</span><div class="tag-line"></div></div><h2 class="section-title">Latest Articles</h2></div>
-            <div class="news-grid">
-                <div class="news-featured fade-in"><div class="news-featured-img"><img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=700&h=450&fit=crop" alt=""><div class="news-cat" style="background:#0056B3;">Smart Grids</div></div><div class="news-featured-body"><div class="news-date">June 18, 2025 · 8 min read</div><h3 class="news-title">Smart Grids in Azerbaijan: From Concept to Implementation</h3><p class="news-excerpt">Analysis of the current state of Azerbaijan's power grid and prospects for implementing intelligent management technologies.</p></div></div>
-                <div class="news-side">
-                    <div class="news-small fade-in"><div class="news-small-img"><img src="https://images.unsplash.com/photo-1611273426858-450d8e3c9fce?w=500&h=320&fit=crop" alt=""></div><div><div class="news-small-cat" style="background:#7A5C28;">Oil & Gas</div><h4 class="news-small-title">Smart Wells: How Technology is Changing Oil Production</h4><div class="news-small-date">June 5, 2025</div></div></div>
-                    <div class="news-small fade-in"><div class="news-small-img"><img src="https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=500&h=320&fit=crop" alt=""></div><div><div class="news-small-cat" style="background:#5A3E9C;">AI in Energy</div><h4 class="news-small-title">AI in Power System Management: 2025 Practice</h4><div class="news-small-date">May 28, 2025</div></div></div>
-                    <div class="news-small fade-in"><div class="news-small-img"><img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=500&h=320&fit=crop" alt=""></div><div><div class="news-small-cat" style="background:#2A7A3A;">SET Academy</div><h4 class="news-small-title">SET Academy Launch: First Courses and Training Formats</h4><div class="news-small-date">May 14, 2025</div></div></div>
-                </div>
+            <div class="content-block highlight-block">
+                <h2>Готовы начать проект?</h2>
+                <p>Свяжитесь с нами для обсуждения вашего проекта. Мы ответим в течение одного рабочего дня и предложим оптимальный формат сотрудничества.</p>
+                <a href="mailto:info@setpower.az" class="btn btn-primary">Написать на info@setpower.az</a>
             </div>
         </div>
     </section>
 
     <footer class="footer">
-        <div class="footer-cta"><div class="container"><div class="cta-content"><div><h3 class="cta-title">Ready to Start Your Project?</h3><p class="cta-desc">Contact us — we'll respond within one business day.</p></div><div class="cta-buttons"><a href="contact.html" class="btn btn-primary">Contact Us</a><a href="contact.html" class="btn btn-outline-dark">Download Presentation</a></div></div></div></div>
-        <div class="footer-main"><div class="container"><div class="footer-grid"><div class="footer-brand"><div class="footer-logo"><img src="logo.png" alt="SET" class="logo-img"><div><div class="footer-name">SET</div><div class="footer-sub">Smart Engineering Technologies</div></div></div><p class="footer-desc">International engineering company delivering intelligent solutions for energy, oil & gas, and industrial sectors.</p><div class="footer-contacts"><div><strong>Website:</strong> <a href="https://setpower.az">setpower.az</a></div><div><strong>Phone:</strong> <a href="tel:+994502475057">+994 50 247 50 57</a></div><div><strong>Email:</strong> <a href="mailto:info@setpower.az">info@setpower.az</a></div></div></div><div class="footer-col"><h4>Navigation</h4><ul><li><a href="index.html">Home</a></li><li><a href="services.html">Services</a></li><li><a href="industries.html">Industries</a></li><li><a href="contact.html">Contact</a></li></ul></div><div class="footer-col"><h4>Services</h4><ul><li><a href="services.html">Smart Grids</a></li><li><a href="services.html">Digital Substations</a></li><li><a href="services.html">SCADA / EMS</a></li><li><a href="services.html">Smart Wells</a></li></ul></div><div class="footer-col"><h4>Company</h4><ul><li><a href="index.html">About SET</a></li><li><a href="academy.html">Academy</a></li><li><a href="partners.html">Partners</a></li><li><a href="contact.html">Contact</a></li></ul></div></div><div class="footer-bottom"><div>© 2026 SET — Smart Engineering Technologies. All rights reserved.</div><div class="footer-links"><a href="#">Privacy Policy</a><a href="#">Terms of Use</a></div></div></div></div>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>SET</h4>
+                    <p>Smart Engineering Technologies</p>
+                    <p>Engineering Intelligence for Energy & Industry</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Навигация</h4>
+                    <ul>
+                        <li><a href="index.html">Главная</a></li>
+                        <li><a href="about.html">О компании</a></li>
+                        <li><a href="services.html">Услуги</a></li>
+                        <li><a href="contact.html">Контакты</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Документы</h4>
+                    <ul>
+                        <li><a href="manifesto.html">Манифест</a></li>
+                        <li><a href="philosophy.html">Философия</a></li>
+                        <li><a href="mission.html">Миссия</a></li>
+                        <li><a href="vision-2035.html">Видение 2035</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Контакты</h4>
+                    <p>info@setpower.az</p>
+                    <p>+994 50 247 50 57</p>
+                    <p>Баку, Азербайджан</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 SET - Smart Engineering Technologies. Все права защищены.</p>
+            </div>
+        </div>
     </footer>
+
     <script src="script.js"></script>
 </body>
 </html>

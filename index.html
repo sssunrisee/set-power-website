@@ -1,392 +1,150 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SET - Smart Engineering Technologies</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Barlow:wght@400;500;600;700&family=Barlow+Condensed:wght@500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <!-- Navigation -->
-    <nav class="navbar" id="navbar">
-        <div class="nav-container">
-            <a href="index.html" class="nav-logo">
-                <img src="logo.png" alt="SET" class="logo-img">
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <img src="logo.png" alt="SET Logo" class="logo-img">
                 <div class="logo-text">
-                    <span class="logo-name">SET</span>
-                    <span class="logo-sub">Smart Engineering Technologies</span>
+                    <div class="logo-name">SET</div>
+                    <div class="logo-subtitle">Smart Engineering Technologies</div>
                 </div>
             </a>
+            <button class="mobile-menu-btn" onclick="toggleMenu()">☰</button>
             <ul class="nav-links" id="navLinks">
-                <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="industries.html">Industries</a></li>
-                <li><a href="academy.html">Academy</a></li>
-                <li><a href="partners.html">Partners</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="manifesto.html">Манифест</a></li>
+                <li><a href="philosophy.html">Философия</a></li>
+                <li><a href="about.html">О компании</a></li>
+                <li><a href="mission.html">Миссия</a></li>
+                <li><a href="why-set.html">Почему SET</a></li>
+                <li><a href="vision-2035.html">Видение 2035</a></li>
+                <li><a href="values.html">Ценности</a></li>
+                <li><a href="services.html">Услуги</a></li>
+                <li><a href="contact.html">Контакты</a></li>
             </ul>
-            <a href="contact.html" class="nav-cta">Contact Us</a>
-            <button class="nav-toggle" id="navToggle" aria-label="Menu">
-                <span></span><span></span><span></span>
-            </button>
         </div>
     </nav>
 
     <!-- Hero Section -->
     <section class="hero">
-        <div class="hero-bg">
-            <video autoplay muted loop playsinline class="hero-video">
+        <div class="hero-video-bg">
+            <video autoplay muted loop playsinline>
                 <source src="https://assets.mixkit.co/videos/preview/mixkit-digital-animation-of-futuristic-devices-99786-large.mp4" type="video/mp4">
             </video>
             <div class="hero-overlay"></div>
-            <div class="hero-grid"></div>
         </div>
-        <div class="hero-content">
-            <div class="hero-tag">
-                <div class="tag-line"></div>
-                <span>Smart Engineering Technologies</span>
-            </div>
-            <h1 class="hero-title">
-                <span class="title-main">SET</span>
-                <span class="title-sub">Digital Energy • Smart Grids • AI • Industrial Automation</span>
-            </h1>
-            <p class="hero-desc">
-                International engineering company delivering intelligent solutions 
-                for energy, oil & gas, and industrial sectors. Headquartered in Baku, Azerbaijan.
-            </p>
+        <div class="container hero-content">
+            <h1 class="hero-title">Engineering Intelligence<br>for Energy & Industry</h1>
+            <p class="hero-subtitle">Создаём интеллектуальные инженерные решения для энергетики, нефтегаза и промышленности</p>
             <div class="hero-buttons">
-                <a href="contact.html" class="btn btn-primary">Contact Us</a>
-                <a href="contact.html" class="btn btn-outline">Download Presentation</a>
-                <a href="contact.html" class="btn btn-accent">Request Meeting</a>
+                <a href="contact.html" class="btn btn-primary">Связаться с нами</a>
+                <a href="manifesto.html" class="btn btn-secondary">Читать манифест</a>
             </div>
-        </div>
-        <div class="hero-stats">
-            <div class="stat-card">
-                <div class="stat-num">10+</div>
-                <div class="stat-label">Strategic Projects</div>
-                <div class="stat-sub">in pipeline</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-num">5</div>
-                <div class="stat-label">Key Directions</div>
-                <div class="stat-sub">of expertise</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-num">2035</div>
-                <div class="stat-label">Vision Horizon</div>
-                <div class="stat-sub">international growth</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-num">360°</div>
-                <div class="stat-label">Engineering</div>
-                <div class="stat-sub">full-cycle approach</div>
-            </div>
-        </div>
-        <div class="scroll-indicator">
-            <div class="scroll-dot"></div>
         </div>
     </section>
 
-    <!-- About Section -->
-    <section class="section about-section">
+    <!-- Welcome Section -->
+    <section class="section welcome-section">
         <div class="container">
-            <div class="about-grid">
-                <div class="about-content">
-                    <div class="section-tag">
-                        <div class="tag-line"></div>
-                        <span>About SET</span>
-                    </div>
-                    <h2 class="section-title">Engineering Company Focused on Results</h2>
-                    <p class="section-desc">
-                        SET is a team of engineers and developers from Baku, Azerbaijan. We design and implement 
-                        automation systems for energy and oil & gas sectors, working with real challenges — 
-                        from initial audit to launch and ongoing support.
-                    </p>
-                    <p class="section-desc">
-                        Founded by practicing engineers, we bring deep industry knowledge combined with 
-                        cutting-edge digital technologies to every project we undertake.
-                    </p>
+            <h2 class="section-title">Добро пожаловать в SET</h2>
+            <p class="section-text">
+                Smart Engineering Technologies (SET) — это международная инженерно-технологическая компания, 
+                которая помогает предприятиям внедрять современные решения, повышать эффективность и ускорять 
+                цифровую трансформацию.
+            </p>
+            <p class="section-text">
+                Мы создаём инженерные решения, объединяющие знания, технологии и ответственность ради 
+                устойчивого развития энергетики, промышленности и общества.
+            </p>
+        </div>
+    </section>
+
+    <!-- Key Directions -->
+    <section class="section directions-section">
+        <div class="container">
+            <h2 class="section-title">Наши направления</h2>
+            <div class="directions-grid">
+                <div class="direction-card">
+                    <h3>SET Energy</h3>
+                    <p>Цифровая энергетика, Smart Grids, цифровые подстанции, SCADA, EMS, DMS</p>
                 </div>
-                <div class="about-features">
-                    <div class="feature-block">
-                        <div class="feature-label">Our Mission</div>
-                        <p class="feature-text">
-                            Accelerate the digital transformation of strategic industries by implementing 
-                            world-class solutions with respect for regional specifics.
-                        </p>
-                    </div>
-                    <div class="feature-block">
-                        <div class="feature-label dark">Vision 2030–2035</div>
-                        <p class="feature-text dark">
-                            Become the leading engineering-technological partner for the energy and industrial 
-                            sectors in CIS and Middle East regions.
-                        </p>
-                    </div>
+                <div class="direction-card">
+                    <h3>SET Oil & Gas</h3>
+                    <p>Smart Wells, цифровые месторождения, технологии повышения нефтеотдачи</p>
+                </div>
+                <div class="direction-card">
+                    <h3>SET AI</h3>
+                    <p>Искусственный интеллект, машинное обучение, предиктивная аналитика</p>
+                </div>
+                <div class="direction-card">
+                    <h3>SET Automation</h3>
+                    <p>Промышленная автоматизация, IoT, роботизация</p>
+                </div>
+                <div class="direction-card">
+                    <h3>SET Digital Twin</h3>
+                    <p>Цифровые двойники, моделирование, оптимизация жизненного цикла</p>
+                </div>
+                <div class="direction-card">
+                    <h3>SET Academy</h3>
+                    <p>Образовательные программы, подготовка специалистов</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Mission Section -->
-    <section class="section mission-section">
+    <!-- Call to Action -->
+    <section class="section cta-section">
         <div class="container">
-            <div class="mission-grid">
-                <div class="mission-content">
-                    <div class="section-tag">
-                        <div class="tag-line"></div>
-                        <span>Our Mission</span>
-                    </div>
-                    <h2 class="section-title">Accelerating the digital transformation of strategic industries</h2>
-                    <p class="section-desc">
-                        SET helps enterprises transition to digital energy and intelligent industrial technologies. 
-                        We deliver world-class engineering solutions tailored to regional specifics.
-                    </p>
-                    <p class="section-desc">
-                        Our mission is to bridge the gap between cutting-edge technology and practical implementation, 
-                        creating measurable value for our clients in energy, oil & gas, and industrial sectors.
-                    </p>
-                </div>
-                <div class="mission-quote">
-                    <div class="quote-mark">"</div>
-                    <p class="quote-text">
-                        To accelerate the digital transformation of strategic industries by implementing 
-                        world-class solutions with respect for regional specifics.
-                    </p>
-                    <div class="quote-author">
-                        <div class="quote-name">SET Engineering Group</div>
-                        <div class="quote-location">Baku, Azerbaijan</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Vision Section -->
-    <section class="section vision-section">
-        <div class="container">
-            <div class="section-header center">
-                <div class="section-tag">
-                    <div class="tag-line"></div>
-                    <span>Vision 2035</span>
-                    <div class="tag-line"></div>
-                </div>
-                <h2 class="section-title light">Our Roadmap to 2035</h2>
-            </div>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-dot active"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-year">2026–2028</div>
-                        <h3 class="timeline-title">Market Entry</h3>
-                        <p class="timeline-desc">Establish presence in Azerbaijan. Complete first strategic projects with AzərEnerji and SOCAR. Build local engineering team.</p>
-                        <div class="timeline-status">
-                            <div class="status-dot"></div>
-                            <span>In Progress</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-year">2028–2030</div>
-                        <h3 class="timeline-title">Regional Expansion</h3>
-                        <p class="timeline-desc">Expand to South Caucasus and Central Asia. Develop partnerships with international technology providers.</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-year">2030–2035</div>
-                        <h3 class="timeline-title">International Growth</h3>
-                        <p class="timeline-desc">Become a leading engineering-technological partner for energy and industrial sectors in CIS and Middle East regions.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Why SET Section -->
-    <section class="section why-section">
-        <div class="container">
-            <div class="section-header center">
-                <div class="section-tag">
-                    <div class="tag-line"></div>
-                    <span>Why SET</span>
-                    <div class="tag-line"></div>
-                </div>
-                <h2 class="section-title">What Makes Us Different</h2>
-                <p class="section-subtitle">Six principles that define every project we deliver.</p>
-            </div>
-            <div class="why-grid">
-                <div class="why-card">
-                    <div class="why-icon">
-                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><path d="M16 4L28 10v12L16 28 4 22V10L16 4z" stroke="#00A9E0" stroke-width="1.5"/><path d="M16 10v8M12 14h8" stroke="#00A9E0" stroke-width="1.5" stroke-linecap="round"/></svg>
-                    </div>
-                    <div class="why-num">01</div>
-                    <h3 class="why-title">Engineering Excellence</h3>
-                    <p class="why-desc">Every solution is based on international standards, rigorous calculations, and deep technical expertise.</p>
-                </div>
-                <div class="why-card">
-                    <div class="why-icon">
-                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="12" stroke="#00A9E0" stroke-width="1.5"/><path d="M16 8v8l5 3" stroke="#00A9E0" stroke-width="1.5" stroke-linecap="round"/></svg>
-                    </div>
-                    <div class="why-num">02</div>
-                    <h3 class="why-title">Digital-First Approach</h3>
-                    <p class="why-desc">We design future-ready systems: from SCADA and EMS to AI analytics and predictive maintenance.</p>
-                </div>
-                <div class="why-card">
-                    <div class="why-icon">
-                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><path d="M6 26V12l10-8 10 8v14H6z" stroke="#00A9E0" stroke-width="1.5"/><path d="M12 26v-10h8v10" stroke="#00A9E0" stroke-width="1.5"/></svg>
-                    </div>
-                    <div class="why-num">03</div>
-                    <h3 class="why-title">Client-Centric Results</h3>
-                    <p class="why-desc">Our KPI is real economic impact and operational efficiency. We succeed when you succeed.</p>
-                </div>
-                <div class="why-card">
-                    <div class="why-icon">
-                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><circle cx="12" cy="16" r="7" stroke="#00A9E0" stroke-width="1.5"/><circle cx="22" cy="16" r="7" stroke="#00A9E0" stroke-width="1.5"/><path d="M16 11v10" stroke="#00A9E0" stroke-width="1" stroke-linecap="round"/></svg>
-                    </div>
-                    <div class="why-num">04</div>
-                    <h3 class="why-title">Open Partnership Model</h3>
-                    <p class="why-desc">We work on a results-sharing model — our success depends entirely on the success of our clients.</p>
-                </div>
-                <div class="why-card">
-                    <div class="why-icon">
-                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><path d="M8 24V14l8-6 8 6v10H8z" stroke="#00A9E0" stroke-width="1.5"/><path d="M13 24v-6h6v6" stroke="#00A9E0" stroke-width="1.5"/><circle cx="24" cy="10" r="3" stroke="#00A9E0" stroke-width="1.5"/></svg>
-                    </div>
-                    <div class="why-num">05</div>
-                    <h3 class="why-title">Full-Cycle Engineering</h3>
-                    <p class="why-desc">From initial audit to final implementation and ongoing support. We handle every phase.</p>
-                </div>
-                <div class="why-card">
-                    <div class="why-icon">
-                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="12" stroke="#00A9E0" stroke-width="1.5"/><path d="M16 4v24M4 16h24" stroke="#00A9E0" stroke-width="1"/><path d="M6 10h20M6 22h20" stroke="#00A9E0" stroke-width="1"/></svg>
-                    </div>
-                    <div class="why-num">06</div>
-                    <h3 class="why-title">Regional Expertise</h3>
-                    <p class="why-desc">Deep understanding of CIS and Middle East markets, combined with international technology standards.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CEO Section -->
-    <section class="section ceo-section">
-        <div class="container">
-            <div class="ceo-grid">
-                <div class="ceo-photo">
-                    <div class="photo-placeholder">
-                        <div class="photo-logo">SET</div>
-                        <div class="photo-label">Founder & CEO</div>
-                    </div>
-                </div>
-                <div class="ceo-content">
-                    <div class="section-tag">
-                        <div class="tag-line"></div>
-                        <span>Leadership</span>
-                    </div>
-                    <h2 class="section-title">Founded by Engineers, Driven by Vision</h2>
-                    <p class="section-desc">
-                        SET was founded by practicing engineers with extensive experience in energy and oil & gas sectors. 
-                        Our leadership combines deep technical expertise with strategic vision for digital transformation.
-                    </p>
-                    <p class="section-desc">
-                        With decades of combined experience in implementing large-scale engineering projects, 
-                        our team understands both the technical challenges and business requirements of modern energy systems.
-                    </p>
-                    <div class="ceo-stats">
-                        <div class="ceo-stat">
-                            <div class="ceo-stat-num">15+</div>
-                            <div class="ceo-stat-label">Years Experience</div>
-                        </div>
-                        <div class="ceo-stat">
-                            <div class="ceo-stat-num">50+</div>
-                            <div class="ceo-stat-label">Projects Completed</div>
-                        </div>
-                        <div class="ceo-stat">
-                            <div class="ceo-stat-num">10+</div>
-                            <div class="ceo-stat-label">Countries Served</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <h2 class="cta-title">Готовы начать проект?</h2>
+            <p class="cta-text">Свяжитесь с нами для обсуждения вашего проекта</p>
+            <a href="contact.html" class="btn btn-primary">Связаться</a>
         </div>
     </section>
 
     <!-- Footer -->
     <footer class="footer">
-        <div class="footer-cta">
-            <div class="container">
-                <div class="cta-content">
-                    <div>
-                        <h3 class="cta-title">Ready to Start Your Project?</h3>
-                        <p class="cta-desc">Contact us — we'll respond within one business day.</p>
-                    </div>
-                    <div class="cta-buttons">
-                        <a href="contact.html" class="btn btn-primary">Contact Us</a>
-                        <a href="contact.html" class="btn btn-outline-dark">Download Presentation</a>
-                    </div>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>SET</h4>
+                    <p>Smart Engineering Technologies</p>
+                    <p>Engineering Intelligence for Energy & Industry</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Навигация</h4>
+                    <ul>
+                        <li><a href="index.html">Главная</a></li>
+                        <li><a href="about.html">О компании</a></li>
+                        <li><a href="services.html">Услуги</a></li>
+                        <li><a href="contact.html">Контакты</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Документы</h4>
+                    <ul>
+                        <li><a href="manifesto.html">Манифест</a></li>
+                        <li><a href="philosophy.html">Философия</a></li>
+                        <li><a href="mission.html">Миссия</a></li>
+                        <li><a href="vision-2035.html">Видение 2035</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Контакты</h4>
+                    <p>info@setpower.az</p>
+                    <p>+994 50 247 50 57</p>
+                    <p>Баку, Азербайджан</p>
                 </div>
             </div>
-        </div>
-        <div class="footer-main">
-            <div class="container">
-                <div class="footer-grid">
-                    <div class="footer-brand">
-                        <div class="footer-logo">
-                            <img src="logo.png" alt="SET" class="logo-img">
-                            <div>
-                                <div class="footer-name">SET</div>
-                                <div class="footer-sub">Smart Engineering Technologies</div>
-                            </div>
-                        </div>
-                        <p class="footer-desc">
-                            International engineering company delivering intelligent solutions 
-                            for energy, oil & gas, and industrial sectors.
-                        </p>
-                        <div class="footer-contacts">
-                            <div><strong>Website:</strong> <a href="https://setpower.az">setpower.az</a></div>
-                            <div><strong>Phone:</strong> <a href="tel:+994502475057">+994 50 247 50 57</a></div>
-                            <div><strong>Email:</strong> <a href="mailto:info@setpower.az">info@setpower.az</a></div>
-                        </div>
-                    </div>
-                    <div class="footer-col">
-                        <h4>Navigation</h4>
-                        <ul>
-                            <li><a href="index.html">Home</a></li>
-                            <li><a href="services.html">Services</a></li>
-                            <li><a href="industries.html">Industries</a></li>
-                            <li><a href="contact.html">Contact</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-col">
-                        <h4>Services</h4>
-                        <ul>
-                            <li><a href="services.html">Smart Grids</a></li>
-                            <li><a href="services.html">Digital Substations</a></li>
-                            <li><a href="services.html">SCADA / EMS</a></li>
-                            <li><a href="services.html">Smart Wells</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-col">
-                        <h4>Company</h4>
-                        <ul>
-                            <li><a href="index.html">About SET</a></li>
-                            <li><a href="academy.html">Academy</a></li>
-                            <li><a href="partners.html">Partners</a></li>
-                            <li><a href="contact.html">Contact</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="footer-bottom">
-                    <div>© 2026 SET — Smart Engineering Technologies. All rights reserved.</div>
-                    <div class="footer-links">
-                        <a href="#">Privacy Policy</a>
-                        <a href="#">Terms of Use</a>
-                    </div>
-                </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 SET - Smart Engineering Technologies. Все права защищены.</p>
             </div>
         </div>
     </footer>

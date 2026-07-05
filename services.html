@@ -1,149 +1,184 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Services - SET Smart Engineering Technologies</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Barlow:wght@400;500;600;700&family=Barlow+Condensed:wght@500;600;700&display=swap" rel="stylesheet">
+    <title>Услуги SET - Smart Engineering Technologies</title>
     <link rel="stylesheet" href="style.css">
-    <style>
-        .page-hero { background: #0A1628; padding: 160px 0 80px; text-align: center; }
-        .page-hero h1 { font-family: 'Barlow', sans-serif; font-weight: 700; font-size: clamp(2.5rem,5vw,4rem); color: #fff; letter-spacing: -0.02em; }
-        .page-hero p { color: #A0B8D8; font-size: 18px; max-width: 600px; margin: 16px auto 0; font-weight: 300; }
-        .directions-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
-        @media (max-width: 768px) { .directions-grid { grid-template-columns: 1fr; } }
-        .direction-card { background: #F8FAFC; border: 1px solid #E2E8F0; overflow: hidden; transition: all 0.5s; }
-        .direction-card:hover { border-color: rgba(0,169,224,0.3); box-shadow: 0 20px 40px rgba(0,169,224,0.08); transform: translateY(-5px); }
-        .direction-img { height: 200px; background: #E2E8F0; position: relative; overflow: hidden; }
-        .direction-img img { width: 100%; height: 100%; object-fit: cover; opacity: 0.6; transition: all 0.7s; }
-        .direction-card:hover .direction-img img { opacity: 0.8; transform: scale(1.05); }
-        .direction-num { position: absolute; top: 16px; left: 16px; font-family: 'Barlow', sans-serif; font-weight: 700; font-size: 5rem; color: rgba(255,255,255,0.2); line-height: 1; }
-        .direction-body { padding: 32px; }
-        .direction-sub { font-family: 'Barlow Condensed', sans-serif; font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase; color: #00A9E0; font-weight: 600; margin-bottom: 8px; }
-        .direction-title { font-family: 'Barlow', sans-serif; font-weight: 700; font-size: 24px; color: #0A1628; margin-bottom: 16px; transition: color 0.3s; }
-        .direction-card:hover .direction-title { color: #00A9E0; }
-        .direction-desc { color: #5A7090; line-height: 1.7; margin-bottom: 24px; font-weight: 300; }
-        .direction-tags { display: flex; flex-wrap: wrap; gap: 8px; }
-        .direction-tags span { font-size: 10px; padding: 6px 12px; background: #fff; border: 1px solid #E2E8F0; color: #0A1628; font-weight: 500; }
-    </style>
 </head>
 <body>
-    <nav class="navbar" id="navbar">
-        <div class="nav-container">
-            <a href="index.html" class="nav-logo">
-                <img src="logo.png" alt="SET" class="logo-img">
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <img src="logo.png" alt="SET Logo" class="logo-img">
                 <div class="logo-text">
-                    <span class="logo-name">SET</span>
-                    <span class="logo-sub">Smart Engineering Technologies</span>
+                    <div class="logo-name">SET</div>
+                    <div class="logo-subtitle">Smart Engineering Technologies</div>
                 </div>
             </a>
+            <button class="mobile-menu-btn" onclick="toggleMenu()">☰</button>
             <ul class="nav-links" id="navLinks">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="services.html" class="active">Services</a></li>
-                <li><a href="industries.html">Industries</a></li>
-                <li><a href="academy.html">Academy</a></li>
-                <li><a href="partners.html">Partners</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="manifesto.html">Манифест</a></li>
+                <li><a href="philosophy.html">Философия</a></li>
+                <li><a href="about.html">О компании</a></li>
+                <li><a href="mission.html">Миссия</a></li>
+                <li><a href="why-set.html">Почему SET</a></li>
+                <li><a href="vision-2035.html">Видение 2035</a></li>
+                <li><a href="values.html">Ценности</a></li>
+                <li><a href="services.html" class="active">Услуги</a></li>
+                <li><a href="contact.html">Контакты</a></li>
             </ul>
-            <a href="contact.html" class="nav-cta">Contact Us</a>
-            <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
         </div>
     </nav>
 
-    <div class="page-hero">
+    <section class="page-hero">
         <div class="container">
-            <div class="section-tag" style="justify-content:center;margin-bottom:24px;">
-                <div class="tag-line"></div><span>Key Directions</span><div class="tag-line"></div>
-            </div>
-            <h1>Our Areas of Expertise</h1>
-            <p>Eight strategic directions where SET delivers measurable value to clients across energy and industrial sectors.</p>
+            <h1>Наши Услуги</h1>
+            <p class="hero-subtitle">Семь стратегических платформ SET</p>
         </div>
-    </div>
+    </section>
 
-    <section class="section">
+    <section class="section content-section">
         <div class="container">
-            <div class="directions-grid">
-                <div class="direction-card fade-in">
-                    <div class="direction-img"><img src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=600&h=400&fit=crop" alt="Smart Grids"><div class="direction-num">01</div></div>
-                    <div class="direction-body">
-                        <div class="direction-sub">Digital Energy Management</div>
-                        <h3 class="direction-title">Smart Grids</h3>
-                        <p class="direction-desc">Intelligent power grid systems with advanced monitoring, automation, and optimization capabilities.</p>
-                        <div class="direction-tags"><span>EMS</span><span>DMS</span><span>OMS</span><span>Smart Metering</span><span>IEC 61850</span></div>
-                    </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-number">01</div>
+                    <h3>SET Energy</h3>
+                    <p>Разработка решений для цифровой энергетики</p>
+                    <ul>
+                        <li>Smart Grids</li>
+                        <li>Цифровые подстанции</li>
+                        <li>SCADA, EMS, DMS, DERMS</li>
+                        <li>Системы накопления энергии</li>
+                        <li>Интеллектуальное управление энергосистемами</li>
+                    </ul>
                 </div>
-                <div class="direction-card fade-in">
-                    <div class="direction-img"><img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&h=400&fit=crop" alt="Digital Substations"><div class="direction-num">02</div></div>
-                    <div class="direction-body">
-                        <div class="direction-sub">Next-Generation Infrastructure</div>
-                        <h3 class="direction-title">Digital Substations</h3>
-                        <p class="direction-desc">Fully automated digital substations with integrated protection, control, and monitoring systems.</p>
-                        <div class="direction-tags"><span>Automation</span><span>Protection</span><span>SCADA</span><span>Remote Control</span></div>
-                    </div>
+
+                <div class="service-card">
+                    <div class="service-number">02</div>
+                    <h3>SET Oil & Gas</h3>
+                    <p>Современные инженерные решения для нефтегазовой отрасли</p>
+                    <ul>
+                        <li>Smart Wells</li>
+                        <li>Цифровые месторождения</li>
+                        <li>Технологии повышения нефтеотдачи</li>
+                        <li>Интеллектуальный мониторинг</li>
+                        <li>Инженерная аналитика</li>
+                    </ul>
                 </div>
-                <div class="direction-card fade-in">
-                    <div class="direction-img"><img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop" alt="SCADA"><div class="direction-num">03</div></div>
-                    <div class="direction-body">
-                        <div class="direction-sub">Control Systems</div>
-                        <h3 class="direction-title">SCADA / EMS / DMS</h3>
-                        <p class="direction-desc">Advanced supervisory control and data acquisition systems for energy management and distribution.</p>
-                        <div class="direction-tags"><span>Real-time Monitoring</span><span>Data Analytics</span><span>Control</span><span>Optimization</span></div>
-                    </div>
+
+                <div class="service-card">
+                    <div class="service-number">03</div>
+                    <h3>SET AI</h3>
+                    <p>Интеллектуальные системы на основе искусственного интеллекта</p>
+                    <ul>
+                        <li>Прогнозирование</li>
+                        <li>Машинное обучение</li>
+                        <li>Компьютерное зрение</li>
+                        <li>Промышленная аналитика</li>
+                        <li>Предиктивная диагностика</li>
+                    </ul>
                 </div>
-                <div class="direction-card fade-in">
-                    <div class="direction-img"><img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?w=600&h=400&fit=crop" alt="Renewable Energy"><div class="direction-num">04</div></div>
-                    <div class="direction-body">
-                        <div class="direction-sub">Sustainable Solutions</div>
-                        <h3 class="direction-title">Renewable Energy</h3>
-                        <p class="direction-desc">Integration of solar, wind, and alternative energy sources into existing power infrastructure.</p>
-                        <div class="direction-tags"><span>Solar</span><span>Wind</span><span>Grid Integration</span><span>Energy Storage</span></div>
-                    </div>
+
+                <div class="service-card">
+                    <div class="service-number">04</div>
+                    <h3>SET Automation</h3>
+                    <p>Автоматизированные системы управления</p>
+                    <ul>
+                        <li>Промышленный Интернет вещей</li>
+                        <li>Роботизация</li>
+                        <li>Интеллектуальные системы управления</li>
+                        <li>PLC, DCS, SCADA</li>
+                    </ul>
                 </div>
-                <div class="direction-card fade-in">
-                    <div class="direction-img"><img src="https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=600&h=400&fit=crop" alt="AI"><div class="direction-num">05</div></div>
-                    <div class="direction-body">
-                        <div class="direction-sub">Predictive Analytics</div>
-                        <h3 class="direction-title">Artificial Intelligence</h3>
-                        <p class="direction-desc">AI-powered solutions for predictive maintenance, load forecasting, and operational optimization.</p>
-                        <div class="direction-tags"><span>Machine Learning</span><span>Predictive Maintenance</span><span>Forecasting</span><span>Optimization</span></div>
-                    </div>
+
+                <div class="service-card">
+                    <div class="service-number">05</div>
+                    <h3>SET Digital Twin</h3>
+                    <p>Цифровые двойники объектов</p>
+                    <ul>
+                        <li>Моделирование энергетических объектов</li>
+                        <li>Оптимизация жизненного цикла оборудования</li>
+                        <li>Прогнозирование</li>
+                        <li>Симуляция процессов</li>
+                    </ul>
                 </div>
-                <div class="direction-card fade-in">
-                    <div class="direction-img"><img src="https://images.unsplash.com/photo-1518186285589-2f7649de83e0?w=600&h=400&fit=crop" alt="Smart Wells"><div class="direction-num">06</div></div>
-                    <div class="direction-body">
-                        <div class="direction-sub">Intelligent Oil & Gas</div>
-                        <h3 class="direction-title">Smart Wells</h3>
-                        <p class="direction-desc">Advanced well monitoring and optimization technologies for enhanced oil recovery.</p>
-                        <div class="direction-tags"><span>Well Monitoring</span><span>Production Optimization</span><span>Digital Oilfield</span><span>IoT</span></div>
-                    </div>
+
+                <div class="service-card">
+                    <div class="service-number">06</div>
+                    <h3>SET Academy</h3>
+                    <p>Национальный центр инженерных компетенций</p>
+                    <ul>
+                        <li>Подготовка специалистов</li>
+                        <li>Повышение квалификации</li>
+                        <li>Корпоративные образовательные программы</li>
+                        <li>Международные образовательные проекты</li>
+                    </ul>
                 </div>
-                <div class="direction-card fade-in">
-                    <div class="direction-img"><img src="https://images.unsplash.com/photo-1587293852726-70cdb56c2866?w=600&h=400&fit=crop" alt="Digital Oil & Gas"><div class="direction-num">07</div></div>
-                    <div class="direction-body">
-                        <div class="direction-sub">Industry 4.0</div>
-                        <h3 class="direction-title">Digital Oil & Gas</h3>
-                        <p class="direction-desc">Comprehensive digital transformation solutions for oil & gas production and distribution.</p>
-                        <div class="direction-tags"><span>Pipeline Monitoring</span><span>Process Automation</span><span>Safety Systems</span><span>Efficiency</span></div>
-                    </div>
+
+                <div class="service-card">
+                    <div class="service-number">07</div>
+                    <h3>SET Research Center</h3>
+                    <p>Научные исследования и инновации</p>
+                    <ul>
+                        <li>Проведение научных исследований</li>
+                        <li>Разработка инновационных технологий</li>
+                        <li>Подготовка публикаций</li>
+                        <li>Создание опытных образцов</li>
+                        <li>Сотрудничество с университетами</li>
+                    </ul>
                 </div>
-                <div class="direction-card fade-in">
-                    <div class="direction-img"><img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600&h=400&fit=crop" alt="R&D"><div class="direction-num">08</div></div>
-                    <div class="direction-body">
-                        <div class="direction-sub">Innovation Hub</div>
-                        <h3 class="direction-title">Research & Development</h3>
-                        <p class="direction-desc">Cutting-edge research in energy technologies, AI applications, and industrial automation.</p>
-                        <div class="direction-tags"><span>R&D</span><span>Innovation</span><span>Prototyping</span><span>Testing</span></div>
-                    </div>
-                </div>
+            </div>
+
+            <div class="content-block highlight-block">
+                <h2>Как мы работаем</h2>
+                <p>Мы не продаём готовые решения. Мы создаём их вместе с вами, начиная с глубокого понимания вашей задачи.</p>
+                <p>Каждый проект — это партнёрство, основанное на доверии, профессионализме и взаимной ответственности.</p>
+                <a href="contact.html" class="btn btn-primary">Обсудить проект</a>
             </div>
         </div>
     </section>
 
     <footer class="footer">
-        <div class="footer-cta"><div class="container"><div class="cta-content"><div><h3 class="cta-title">Ready to Start Your Project?</h3><p class="cta-desc">Contact us — we'll respond within one business day.</p></div><div class="cta-buttons"><a href="contact.html" class="btn btn-primary">Contact Us</a><a href="contact.html" class="btn btn-outline-dark">Download Presentation</a></div></div></div></div>
-        <div class="footer-main"><div class="container"><div class="footer-grid"><div class="footer-brand"><div class="footer-logo"><img src="logo.png" alt="SET" class="logo-img"><div><div class="footer-name">SET</div><div class="footer-sub">Smart Engineering Technologies</div></div></div><p class="footer-desc">International engineering company delivering intelligent solutions for energy, oil & gas, and industrial sectors.</p><div class="footer-contacts"><div><strong>Website:</strong> <a href="https://setpower.az">setpower.az</a></div><div><strong>Phone:</strong> <a href="tel:+994502475057">+994 50 247 50 57</a></div><div><strong>Email:</strong> <a href="mailto:info@setpower.az">info@setpower.az</a></div></div></div><div class="footer-col"><h4>Navigation</h4><ul><li><a href="index.html">Home</a></li><li><a href="services.html">Services</a></li><li><a href="industries.html">Industries</a></li><li><a href="contact.html">Contact</a></li></ul></div><div class="footer-col"><h4>Services</h4><ul><li><a href="services.html">Smart Grids</a></li><li><a href="services.html">Digital Substations</a></li><li><a href="services.html">SCADA / EMS</a></li><li><a href="services.html">Smart Wells</a></li></ul></div><div class="footer-col"><h4>Company</h4><ul><li><a href="index.html">About SET</a></li><li><a href="academy.html">Academy</a></li><li><a href="partners.html">Partners</a></li><li><a href="contact.html">Contact</a></li></ul></div></div><div class="footer-bottom"><div>© 2026 SET — Smart Engineering Technologies. All rights reserved.</div><div class="footer-links"><a href="#">Privacy Policy</a><a href="#">Terms of Use</a></div></div></div></div>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>SET</h4>
+                    <p>Smart Engineering Technologies</p>
+                    <p>Engineering Intelligence for Energy & Industry</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Навигация</h4>
+                    <ul>
+                        <li><a href="index.html">Главная</a></li>
+                        <li><a href="about.html">О компании</a></li>
+                        <li><a href="services.html">Услуги</a></li>
+                        <li><a href="contact.html">Контакты</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Документы</h4>
+                    <ul>
+                        <li><a href="manifesto.html">Манифест</a></li>
+                        <li><a href="philosophy.html">Философия</a></li>
+                        <li><a href="mission.html">Миссия</a></li>
+                        <li><a href="vision-2035.html">Видение 2035</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Контакты</h4>
+                    <p>info@setpower.az</p>
+                    <p>+994 50 247 50 57</p>
+                    <p>Баку, Азербайджан</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 SET - Smart Engineering Technologies. Все права защищены.</p>
+            </div>
+        </div>
     </footer>
+
     <script src="script.js"></script>
 </body>
 </html>
